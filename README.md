@@ -1,11 +1,11 @@
 # Censys Host Data Analyzer
 
-A professional full-stack application that analyzes Censys host data using AI-powered summarization.
+A professional full-stack application that analyzes Censys host data using AI-generated summarization.
 
 ## Core Functionality
 
 - **Data Validation**: Validates JSON files containing Censys host data structure
-- **AI Summarization**: Generates contextual summaries using Gemini 1.5 Flash
+- **AI Summarization**: Generates contextual summaries using Gemini 2.5 Flash
 - **Interactive Analysis**: Chat interface for querying analyzed data
 - **Real-time Feedback**: Loading indicators during processing phases
 
@@ -13,7 +13,7 @@ A professional full-stack application that analyzes Censys host data using AI-po
 
 - **Frontend**: React, TypeScript, Axios
 - **Backend**: Node.js, Express, TypeScript
-- **AI**: Google Gemini 1.5 Flash
+- **AI**: Google Gemini 2.5 Flash
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ cd frontend && npm install && npm start
 
 Access: http://localhost:3000
 
-## Code Quality
+## Code
 
 - **TypeScript**: Full type safety across frontend and backend
 - **Separation of Concerns**: Clear separation between controllers, services, and components
