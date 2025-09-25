@@ -57,12 +57,6 @@ AI summarization uses carefully crafted prompts optimized for:
 - Components are reusable and composable
 - API service abstracts backend communication
 
-**Extension Points**:
-- Add new data sources by implementing validation interfaces
-- Extend AI prompts through service configuration
-- Add new UI components using existing design patterns
-- Integrate additional AI models through service abstraction
-
 ## API Endpoints
 
 - `POST /api/upload` - File validation and processing
