@@ -30,8 +30,8 @@ app.use(cors({
 }));
 
 // Body parsing middleware
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+app.use(express.json({ limit: '1gb' }));
+app.use(express.urlencoded({ extended: true, limit: '1gb' }));
 
 // Create temp directory for file uploads if it doesn't exist
 const tempDir = path.join(__dirname, '..', 'temp');
@@ -43,7 +43,7 @@ if (!fs.existsSync(tempDir)) {
 const upload = multer({
   dest: tempDir,
   limits: {
-    fileSize: (parseInt(process.env.MAX_FILE_SIZE_MB || '10') * 1024 * 1024), // Default 10MB
+    fileSize: (parseInt(process.env.MAX_FILE_SIZE_MB || '1024') * 1024 * 1024), // Default 1GB
     files: 1 // Only allow one file at a time
   },
   fileFilter: (req, file, cb) => {
@@ -83,7 +83,7 @@ app.use((error: any, req: express.Request, res: express.Response, next: express.
     if (error.code === 'LIMIT_FILE_SIZE') {
       return res.status(400).json({
         success: false,
-        error: 'File size too large. Maximum size is 10MB.'
+        error: 'File size too large. Maximum size is 1GB.'
       });
     }
     if (error.code === 'LIMIT_UNEXPECTED_FILE') {

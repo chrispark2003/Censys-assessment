@@ -22,6 +22,11 @@ A professional full-stack application that analyzes Censys host data using AI-ge
 
 ## Setup
 
+1. Clone repository
+2. Add Gemini API Key in ```./backend/.env```
+3. Run frontend & backend folders
+
+### In terminal: 
 ```bash
 # Backend setup
 cd backend && npm install
@@ -34,20 +39,44 @@ cd frontend && npm install && npm start
 
 Access: http://localhost:3000
 
-## Code
+## Development Assumptions
+- Users uploading one file at a time
+- Files will not contain duplicate hosts
+- In-memory storage will suffice for the specified use case
 
-- **TypeScript**: Full type safety across frontend and backend
-- **Separation of Concerns**: Clear separation between controllers, services, and components
-- **Error Handling**: Comprehensive error boundaries and validation
-- **Testing**: Unit tests for critical functionality
+## Testing Instructions
 
-## Prompt Engineering
+### Backend Testing
+```bash
+cd backend && npm test          # Run all tests
+cd backend && npm run test:watch   # Run tests in watch mode
+cd backend && npm run lint         # Run linting
+```
 
-AI summarization uses carefully crafted prompts optimized for:
+### Frontend Testing
+```bash
+cd frontend && npm test         # Run React component tests
+```
+
+### Test Coverage
+- **Backend**: API controllers and data validation logic
+- **Frontend**: React components with Testing Library
+
+## AI Techniques
+- Developed using with assistance from Copilot and Claude Code
+- Uses Gemini to validate data to capture a wide range of potential invalid data
+- Prompts carefully engineered for maximum functionality and user experience
+
+**Summarization uses carefully crafted prompts optimized for:**
 - **Contextual Analysis**: Understands Censys data structure and relationships
 - **Consistent Output**: Standardized summary format across all hosts
 - **Security Focus**: Highlights vulnerabilities and security implications
 - **Actionable Insights**: Provides clear, practical recommendations
+
+**Validation uses carefully crafted prompts optimized for:**
+- **Sample Censys JSON object for reference**
+- **Desired output object**
+- **Indicators of Censys data**
 
 ## Architecture & Extensibility
 
@@ -57,8 +86,10 @@ AI summarization uses carefully crafted prompts optimized for:
 - Components are reusable and composable
 - API service abstracts backend communication
 
-## API Endpoints
-
-- `POST /api/upload` - File validation and processing
-- `POST /api/summarize` - AI-powered host analysis
-- `POST /api/chat` - Contextual data queries
+**Future Enhancements**:
+- Add more robust testing and edge cases
+- Extend functionality to Platform Web Property and Platform Certificate Datasets
+- Connect to a database for long-term data access
+- Allow users to select their LLM models using VertexAI or OpenRouter
+- Enhance UI for a more professional experience
+- Add user registration for security

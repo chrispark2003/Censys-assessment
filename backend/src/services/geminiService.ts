@@ -142,24 +142,24 @@ export class GeminiService {
     
     return `You are a cybersecurity analyst specializing in Censys host data analysis. Please provide a concise but comprehensive summary of this host.
 
-Host Data:
-${hostJson}
+      Host Data:
+      ${hostJson}
 
-Please provide a summary that includes:
-1. IP address and basic location information (if available)
-2. Key services and ports detected
-3. Notable security findings or certificates
-4. Operating system information (if detected)
-5. Any significant security implications or interesting findings
+      Please provide a summary that includes:
+      1. IP address and basic location information (if available)
+      2. Key services and ports detected
+      3. Notable security findings or certificates
+      4. Operating system information (if detected)
+      5. Any significant security implications or interesting findings
 
-IMPORTANT: Respond with PLAINTEXT ONLY. Do not use any markdown formatting, HTML tags, or special characters. No asterisks, underscores, backticks, or other formatting. Just plain, readable text.
+      IMPORTANT: Respond with PLAINTEXT ONLY. Do not use any markdown formatting, HTML tags, or special characters. No asterisks, underscores, backticks, or other formatting. Just plain, readable text.
 
-Format your response as a clear, readable paragraph. Focus on the most important and actionable information. Keep it concise but informative.
+      Format your response as a clear, readable paragraph. Focus on the most important and actionable information. Keep it concise but informative.
 
-Example format: "[IP] is located in [location]. The host runs [key services] on ports [ports]. [Security findings]. [Additional notable information]."
+      Example format: "[IP] is located in [location]. The host runs [key services] on ports [ports]. [Security findings]. [Additional notable information]."
 
-Summary:`;
-  }
+      Summary:`;
+        }
 
   /**
    * Test connection to Gemini API
